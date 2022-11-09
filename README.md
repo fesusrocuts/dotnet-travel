@@ -32,6 +32,12 @@ g)	Security
 
 el siguiente enlace encuentra el Proyecto completo: donde podrá encontrar el uso de .NET, SqlServer, C#, Entity, las pruebas unitarias se suben a este repositorio en una carpeta llamada pruebasunitarias, se busco al máximo usar buenas prácticas, buen desempeño del producto, se usa MVC (Modelo, vista, controlador) que es un patrón de diseño de software ya ampliamente conocido y que permite mejorar las capacidades de los productos, despliegues, entre otros.
 
+### que necesita para que funciones este proyecto dentro de la infraestructura de su empresa 
+- .NET 6, SQL Server v15, entity framework v7.0.0, C# v9, nUnit v3
+- se escogio la configuración anterior porque trabajo en mi tiempo libre en un emprendimiento con realidad mixta y la maquina esta muy ajustada afinada para tal trabaj, se pueden bajar las versiones seguramente, pero es funcional y hace lo que tiene que hacer.
+- porque no APIRest porque esta solución se puede sacar en un contenedor de docket o gobernado por Kubernetes también esta vez queria mostrar el uso del MVC con .NET
+- en el MER se ajusto unicamente las dos llaves primarias de una entidad donde llegan libros y autores y se dejo una llave primaria para esto y sus 2 llaves foraneas correspondientes.
+
 Descargue la solución en .NET (esta en mi drive)
 https://1drv.ms/u/s!AiS9ZpNsC0xWiRnj92XLW9hMvpW_?e=FydWpV
 Clave para acceder al proyecto completo: Fesus?tedejaverest0k

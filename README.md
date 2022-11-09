@@ -19,6 +19,15 @@ e)	Manage Performance
 f)	Unit Test 
 g)	Security
 
+## Ejecute el App con .NET en windows o linux
+
+- descargue la versión standalone.zip del directorio raíz
+- descomprima en un lugar seguro
+- ingrese a la ruta de la carpeta que se creo al desempaquetar desde la consola (cmd, terminal)
+- ejecute el siguiente comando $> dotnet WebTravelV1.dll 
+- la aplicación le dice que ip y puerto usar para acceder a la solución
+- si desea conocer a fondo como se desarrollo está solución, puede ingresar al siguiente título de Prueba Desarrollo, se requiere que tenga habilidades en desarrollo de software.
+
 ## Prueba Desarrollo
 
 el siguiente enlace encuentra el Proyecto completo: donde podrá encontrar el uso de .NET, SqlServer, C#, Entity, las pruebas unitarias se suben a este repositorio en una carpeta llamada pruebasunitarias, se busco al máximo usar buenas prácticas, buen desempeño del producto, se usa MVC (Modelo, vista, controlador) que es un patrón de diseño de software ya ampliamente conocido y que permite mejorar las capacidades de los productos, despliegues, entre otros.

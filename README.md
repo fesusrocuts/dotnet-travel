@@ -32,14 +32,16 @@ g)	Security
 
 el siguiente enlace encuentra el Proyecto completo: donde podrá encontrar el uso de .NET, SqlServer, C#, Entity, las pruebas unitarias se suben a este repositorio en una carpeta llamada pruebasunitarias, se busco al máximo usar buenas prácticas, buen desempeño del producto, se usa MVC (Modelo, vista, controlador) que es un patrón de diseño de software ya ampliamente conocido y que permite mejorar las capacidades de los productos, despliegues, entre otros.
 
-### que necesita para que funciones este proyecto dentro de la infraestructura de su empresa 
+### ¿cómo hago que este proyecto funciones en mis servidores? 
+que necesita para que funciones este proyecto dentro de la infraestructura de su empresa
 - .NET 6, SQL Server v15, entity framework v7.0.0, C# v9, nUnit v3
-- se escogio la configuración anterior porque trabajo en mi tiempo libre en un emprendimiento con realidad mixta y la maquina esta muy ajustada afinada para tal trabaj, se pueden bajar las versiones seguramente, pero es funcional y hace lo que tiene que hacer.
-- porque no APIRest porque esta solución se puede sacar en un contenedor de docket o gobernado por Kubernetes también esta vez queria mostrar el uso del MVC con .NET
-- en el MER se ajusto unicamente las dos llaves primarias de una entidad donde llegan libros y autores y se dejo una llave primaria para esto y sus 2 llaves foraneas correspondientes.
+- se escogió la configuración anterior porque trabajo en mi tiempo libre en un emprendimiento con realidad mixta y la maquina esta muy ajustada afinada para tal trabajo, se pueden bajar las versiones seguramente, pero es funcional y hace lo que tiene que hacer
+- porque no APIRest porque esta solución se puede sacar en un contenedor de docket o gobernado por Kubernetes también esta vez deseo mostrar el uso del MVC con .NET
+- en el MER se ajustó únicamente las dos llaves primarias de una entidad donde llegan libros y autores y se asignó una llave primaria para esto y sus 2 llaves foráneas correspondientes.
+- tiene que mover la conexión de la base de datos que esta en appsettings.json y conectarla con los datos de su empresa, sino lo hace el app es funcional pero no tiene control apropiado sobre la infraestructura, este servicio es temporal y para uso demostratvo.
 
 Descargue la solución en .NET (esta en mi drive)
 https://1drv.ms/u/s!AiS9ZpNsC0xWiRnj92XLW9hMvpW_?e=FydWpV
-Clave para acceder al proyecto completo: Fesus?tedejaverest0k
+Si te llega a pedir una clave, escribe: Fesus?tedejaverest0k
 
 ![Imagen de inicio App Travel](https://dsm01pap005files.storage.live.com/y4m_Y1ccmO3J72JQ5na5yf5Ru3ZiNFV63ussH02yVqEU9B6IKEvAKgOaIZSMBjzj1bqt2_S0c9MCalgoaxLTBOkiOJVqcg7rxPywN-XwewTM5taNaX7Z-duyhw3VKUDQp4OO_38yOzzZ2hDIUf6FWf7xMMqYueXzIaYtDHLXuCqEIbqmJq6ZFBMyhp21WH70p6J?encodeFailures=1&width=957&height=609)

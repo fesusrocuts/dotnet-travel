@@ -9,6 +9,7 @@ puerto: 1433
 Catalogo: db_a8f646_travel
 Esquema: dbo
 autor: Fesus Rocuts
+version 3
 */
 
 
@@ -43,7 +44,6 @@ GO
 ALTER TABLE [dbo].[autores_has_libros] SET (LOCK_ESCALATION = TABLE)
 GO
 
-
 -- estructura de editoriales
 IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[editoriales]') AND type IN ('U'))
 	DROP TABLE [dbo].[editoriales]
@@ -60,7 +60,7 @@ ALTER TABLE [dbo].[editoriales] SET (LOCK_ESCALATION = TABLE)
 GO
 
 
--- Table structure for libros
+-- estructura de libros
 IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[libros]') AND type IN ('U'))
 	DROP TABLE [dbo].[libros]
 GO
@@ -91,18 +91,25 @@ GO
 
 
 -- incrementos de valor para autores_has_libros
-DBCC CHECKIDENT ('[dbo].[autores_has_libros]', RESEED, 3)
+DBCC CHECKIDENT ('[dbo].[autores_has_libros]', RESEED, 7)
 GO
 
 
--- LLave primaria para autores_has_libros
-ALTER TABLE [dbo].[autores_has_libros] ADD CONSTRAINT [PK__autores___3213E83F1B105E9C] PRIMARY KEY CLUSTERED ([id])
+-- restricción Uniques para autores_has_libros
+ALTER TABLE [dbo].[autores_has_libros] ADD CONSTRAINT [constraint_unique_autores_has_libros] UNIQUE NONCLUSTERED ([autores_id] ASC, [libros_ISBN] ASC)
 WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
 ON [PRIMARY]
 GO
 
 
--- -- incrementos de valor para editoriales
+-- LLave primaria para autores_has_libros
+ALTER TABLE [dbo].[autores_has_libros] ADD CONSTRAINT [PK__autores___3213E83F1B105E9C] PRIMARY KEY CLUSTERED ([id], [autores_id], [libros_ISBN])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
+ON [PRIMARY]
+GO
+
+
+-- incrementos de valor para editoriales
 DBCC CHECKIDENT ('[dbo].[editoriales]', RESEED, 3)
 GO
 
@@ -114,7 +121,7 @@ ON [PRIMARY]
 GO
 
 
--- LLave primaria para table libros
+-- LLave primaria para libros
 ALTER TABLE [dbo].[libros] ADD CONSTRAINT [PK__libros__447D36EB0AAD94E4] PRIMARY KEY CLUSTERED ([ISBN])
 WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
 ON [PRIMARY]
@@ -138,4 +145,3 @@ GO
 -- LLave foranea para table libros
 ALTER TABLE [dbo].[libros] ADD CONSTRAINT [editoriales_id] FOREIGN KEY ([editoriales_id]) REFERENCES [dbo].[editoriales] ([id]) ON DELETE NO ACTION ON UPDATE NO ACTION
 GO
-

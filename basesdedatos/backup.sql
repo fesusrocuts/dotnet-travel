@@ -103,7 +103,7 @@ GO
 
 
 -- LLave primaria para autores_has_libros
-ALTER TABLE [dbo].[autores_has_libros] ADD CONSTRAINT [PK__autores___3213E83F1B105E9C] PRIMARY KEY CLUSTERED ([id], [autores_id], [libros_ISBN])
+ALTER TABLE [dbo].[autores_has_libros] ADD CONSTRAINT [PK__autores___3213E83F1B105E9C] PRIMARY KEY CLUSTERED ([id])
 WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
 ON [PRIMARY]
 GO

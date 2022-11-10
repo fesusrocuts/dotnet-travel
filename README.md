@@ -40,10 +40,10 @@ que necesita para que funciones este proyecto dentro de la infraestructura de su
 - en el MER se ajustó únicamente las dos llaves primarias de una entidad donde llegan libros y autores y se asignó una llave primaria para esto y sus 2 llaves foráneas correspondientes.
 - tiene que mover la conexión de la base de datos que esta en appsettings.json y conectarla con los datos de su empresa, sino lo hace el app es funcional pero no tiene control apropiado sobre la infraestructura, este servicio es temporal y para uso demostratvo.
 - para evitar que exista un comportamiento de duplciidad en registros de autores y libros se agrega la siguiente linea para restringuirlo (se anexa imagen de la respuesta de la excepción del servidor que evita la duplicidad):
-"""
+```
 ALTER TABLE [dbo].[autores_has_libros]
   ADD CONSTRAINT constraint_unique_autores_has_libros UNIQUE(autores_id, libros_ISBN);
-"""
+```
 
 Descargue la solución en .NET (esta en mi drive)
 https://1drv.ms/u/s!AiS9ZpNsC0xWiRnj92XLW9hMvpW_?e=FydWpV

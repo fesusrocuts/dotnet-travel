@@ -39,9 +39,17 @@ que necesita para que funciones este proyecto dentro de la infraestructura de su
 - porque no APIRest porque esta solución se puede sacar en un contenedor de docket o gobernado por Kubernetes también esta vez deseo mostrar el uso del MVC con .NET
 - en el MER se ajustó únicamente las dos llaves primarias de una entidad donde llegan libros y autores y se asignó una llave primaria para esto y sus 2 llaves foráneas correspondientes.
 - tiene que mover la conexión de la base de datos que esta en appsettings.json y conectarla con los datos de su empresa, sino lo hace el app es funcional pero no tiene control apropiado sobre la infraestructura, este servicio es temporal y para uso demostratvo.
+- para evitar que exista un comportamiento de duplciidad en registros de autores y libros se agrega la siguiente linea para restringuirlo (se anexa imagen de la respuesta de la excepción del servidor que evita la duplicidad):
+"""
+ALTER TABLE [dbo].[autores_has_libros]
+  ADD CONSTRAINT constraint_unique_autores_has_libros UNIQUE(autores_id, libros_ISBN);
+"""
 
 Descargue la solución en .NET (esta en mi drive)
 https://1drv.ms/u/s!AiS9ZpNsC0xWiRnj92XLW9hMvpW_?e=FydWpV
 Si te llega a pedir una clave, escribe: Fesus?tedejaverest0k
 
 ![Imagen de inicio App Travel](https://dsm01pap005files.storage.live.com/y4m_Y1ccmO3J72JQ5na5yf5Ru3ZiNFV63ussH02yVqEU9B6IKEvAKgOaIZSMBjzj1bqt2_S0c9MCalgoaxLTBOkiOJVqcg7rxPywN-XwewTM5taNaX7Z-duyhw3VKUDQp4OO_38yOzzZ2hDIUf6FWf7xMMqYueXzIaYtDHLXuCqEIbqmJq6ZFBMyhp21WH70p6J?encodeFailures=1&width=957&height=609)
+
+### libros y autores sin duplicdada, aquí se muestra la excepción del app
+![Imagen excepción restricción autores y libros en Travel](https://raw.githubusercontent.com/fesusrocuts/dotnet-travel/master/captura-pantalla-app/Captura%20de%20pantalla_20221109_080413.png)
